@@ -10,12 +10,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Landing
-        data={data}
-        setData={setData}
-        filteredData={filteredData}
-        setFilteredData={setFilteredData}
-      />
+      <Landing data={data} setFilteredData={setFilteredData} />
       <Coins
         data={data}
         setData={setData}
