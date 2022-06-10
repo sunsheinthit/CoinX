@@ -1,0 +1,24 @@
+.info-container {
+  margin: 1em 0 0 1em;
+  font-size: 1.15em;
+}
+
+.info-container > span {
+  font-weight: bold;
+  margin-left: 0.2em;
+}
+
+.arrow-up {
+  color: green;
+}
+
+.arrow-down {
+  color: red;
+}
+
+h3,
+span,
+.arrow-down,
+.arrow-up {
+  margin-top: 1.2em;
+}

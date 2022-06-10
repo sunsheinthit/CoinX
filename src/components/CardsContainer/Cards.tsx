@@ -1,25 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card';
 import './Cards.css';
-
-interface Coin {
-  volume: string;
-  btcPrice: string;
-  change: string;
-  coinRankUrl: string;
-  color: string;
-  iconUrl: string;
-  listedAt: number;
-  lowVolume: boolean;
-  marketCap: string;
-  name: string;
-  price: string;
-  rank: number;
-  sparkLine: string[];
-  symbol: string;
-  teir: number;
-  uuid: string;
-}
+import { Coin } from '../../Interfaces/index';
 
 interface Props {
   data: Coin[];

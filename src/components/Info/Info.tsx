@@ -1,23 +1,8 @@
-import React from 'react';
-
-interface Coin {
-  volume: string;
-  btcPrice: string;
-  change: string;
-  coinRankUrl: string;
-  color: string;
-  iconUrl: string;
-  listedAt: number;
-  lowVolume: boolean;
-  marketCap: string;
-  name: string;
-  price: string;
-  rank: number;
-  sparkLine: string[];
-  symbol: string;
-  teir: number;
-  uuid: string;
-}
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import './Info.css';
+import millify from 'millify';
+import { Coin } from '../../Interfaces/index';
 
 interface Props {
   coin: Coin;
@@ -25,9 +10,23 @@ interface Props {
 
 const Info = ({ coin }: Props) => {
   return (
-    <div>
-      <h2>{coin.name}</h2>
-      <h4>Usd: {coin.price.slice(0, 7)}</h4>
+    <div className='info-container'>
+      <h3 style={{ color: coin.color }}>{coin.name}</h3>
+      <h3>
+        USD: <span style={{ color: '#118C4F' }}>{coin.price.slice(0, 7)}</span>
+      </h3>
+      {parseInt(coin.change) > 0 ? (
+        <FontAwesomeIcon icon={faArrowUp} className='arrow-up' />
+      ) : (
+        <FontAwesomeIcon icon={faArrowDown} className='arrow-down' />
+      )}
+      <span>{coin.change}% in 24h</span>
+      <h3>
+        Market cap:{' '}
+        <span style={{ color: '#118C4F' }}>
+          {millify(parseInt(coin.marketCap))}
+        </span>
+      </h3>
     </div>
   );
 };

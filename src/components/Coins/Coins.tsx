@@ -1,29 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import Cards from '../CardsContainer/Cards';
 import coins from './CoinsApi';
+import { Coin } from '../../Interfaces/index';
 
-interface Coin {
-  volume: string;
-  btcPrice: string;
-  change: string;
-  coinRankUrl: string;
-  color: string;
-  iconUrl: string;
-  listedAt: number;
-  lowVolume: boolean;
-  marketCap: string;
-  name: string;
-  price: string;
-  rank: number;
-  sparkLine: string[];
-  symbol: string;
-  teir: number;
-  uuid: string;
+interface Props {
+  data: Coin[];
+  setData: (coin: Coin[]) => void;
+  filteredData: Coin[];
+  setFilteredData: (coin: Coin[]) => void;
 }
 
-const Coins = () => {
-  const [data, setData] = useState<Coin[]>([]);
-  const [filteredData, setFilteredData] = useState<Coin[]>([]);
+const Coins = ({ data, setData, filteredData, setFilteredData }: Props) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [input, setInput] = useState<string>('');
 
