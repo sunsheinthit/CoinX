@@ -1,0 +1,22 @@
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #69ce69;
+  flex-direction: column;
+}
+
+.search-bar {
+  border: none;
+  padding: 10px 150px 10px 10px;
+}
+
+.search-bar:focus {
+  outline: none;
+}
+
+h1 {
+  color: #fffff7;
+  margin-bottom: 10px;
+}

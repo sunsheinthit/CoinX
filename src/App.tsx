@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './App.css';
 import Coins from './components/Coins/Coins';
 import Landing from './components/Landing/Landing';
@@ -10,7 +10,12 @@ function App() {
 
   return (
     <div className='App'>
-      <Landing data={data} setFilteredData={setFilteredData} />
+      <Landing
+        data={data}
+        setData={setData}
+        filteredData={filteredData}
+        setFilteredData={setFilteredData}
+      />
       <Coins
         data={data}
         setData={setData}

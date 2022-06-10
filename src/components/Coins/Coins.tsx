@@ -19,6 +19,7 @@ const Coins = ({ data, setData, filteredData, setFilteredData }: Props) => {
     setData(res.data.data.coins);
     setFilteredData(res.data.data.coins);
     setLoading(false);
+    // console.log(filteredData);
   };
 
   useEffect(() => {
