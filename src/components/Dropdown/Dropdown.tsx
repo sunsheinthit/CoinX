@@ -46,7 +46,7 @@ const Dropdown = ({ data, setData, filteredData, setFilteredData }: Props) => {
   };
 
   return (
-    <div>
+    <div className='drop-container'>
       <label>Sort by: </label>
       <select name='algos' value={algo} onChange={changeVal}>
         <option value='rank'>Rank</option>
@@ -54,7 +54,6 @@ const Dropdown = ({ data, setData, filteredData, setFilteredData }: Props) => {
         <option value='price'>Price</option>
         <option value='cap'>Market Cap</option>
       </select>
-      {algo}
     </div>
   );
 };
